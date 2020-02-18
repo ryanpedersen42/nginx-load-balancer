@@ -9,6 +9,11 @@ var server = http.createServer(function (request, response) {
     return;
   }
 
+  if (request.url ==='/home') {
+    response.end(`you're home`)
+    return;
+  }
+
   response.writeHead(200, {"Content-Type": "application/json"});
   console.log('pinged')
   response.end(JSON.stringify({
